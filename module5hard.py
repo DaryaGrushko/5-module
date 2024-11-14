@@ -44,16 +44,16 @@ class UrTube:
 
     def register(self, nickname, password, age):
         #print('==================', '[', ur.current_user, ']','-', nickname, password, age)
-        print ('self.users=', self.users)
         call = 0
-        nik = nickname
         if self.users != []:
-            for us in self.users:
-                if nik in us.nickname:
+            for user in self.users:
+                if nickname in user.nickname:
+
                     print (f'Пользователь {nickname} уже существует')
                     call = 1
                 else:
-                    print ('нет пользователя')
+
+                    print ('Нет такого пользователя')
                     if call != 1 :
                         self.users.append(User(nickname, hash(password), age))
         else:
@@ -94,7 +94,7 @@ class UrTube:
         else:
             print ('Войдите в аккаунт, чтобы смотреть видео')
 
-#
+
 ur = UrTube()
 
 v1 = Video('Лучший язык программирования 2024 года', 200)
@@ -104,9 +104,9 @@ v2 = Video('Для чего девушкам парень программист
 ur.add(v1, v2)
 
 # Проверка поиска
-#print(ur.get_videos('лучший'))
-#print(ur.get_videos('ПРОГ'))
-#print ('---------------------------')
+print(ur.get_videos('лучший'))
+print(ur.get_videos('ПРОГ'))
+
 
 # Проверка на вход пользователя и возрастное ограничение
 
